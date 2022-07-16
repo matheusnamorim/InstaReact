@@ -1,79 +1,28 @@
+import Stories from './Stories';
+import Post from './Post';
+
+const users = [
+  {user: '9gag', url: 'assets/img/9gag.svg'}, 
+  {user: 'meowed', url: 'assets/img/meowed.svg'}, 
+  {user: 'barked', url: 'assets/img/barked.svg'}, 
+  {user: 'nathanwpylestrangeplanet', url: 'assets/img/nathanwpylestrangeplanet.svg'}, 
+  {user: 'wawawicomics', url: 'assets/img/wawawicomics.svg'}, 
+  {user: 'respondeai', url: 'assets/img/respondeai.svg'}, 
+  {user: 'filomoderna', url: 'assets/img/filomoderna.svg'}, 
+  {user: 'memeriagourmet', url: 'assets/img/memeriagourmet.svg'}];
+
+const post = [
+  {user: 'meowed', imgUser: 'assets/img/meowed.svg', img: 'assets/img/gato-telefone.svg', imgEmphasis: 'assets/img/respondeai.svg', emphasis: 'respondeai', likes: 101.523},
+  {user: 'barked', imgUser: 'assets/img/barked.svg', img: 'assets/img/dog.svg', imgEmphasis: 'assets/img/adorable_animals.svg', emphasis: 'adorable_animals', likes: 99.159}
+];
+
 export default function Corpo(){
     return (
         <div class="corpo">
         <div class="esquerda">
           <div class="stories">
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/img/9gag.svg" />
-              </div>
-              <div class="usuario">
-                9gag
-              </div>
-            </div>
 
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/img/meowed.svg" />
-              </div>
-              <div class="usuario">
-                meowed
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/img/barked.svg" />
-              </div>
-              <div class="usuario">
-                barked
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/img/nathanwpylestrangeplanet.svg" />
-              </div>
-              <div class="usuario">
-                nathanwpylestrangeplanet
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/img/wawawicomics.svg" />
-              </div>
-              <div class="usuario">
-                wawawicomics
-              </div>
-            </div>
-            
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/img/respondeai.svg" />
-              </div>
-              <div class="usuario">
-                respondeai
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/img/filomoderna.svg" />
-              </div>
-              <div class="usuario">
-                filomoderna
-              </div>
-            </div>
-
-            <div class="story">
-              <div class="imagem">
-                <img src="assets/img/memeriagourmet.svg" />
-              </div>
-              <div class="usuario">
-                memeriagourmet
-              </div>
-            </div>
+            {users.map(item => <Stories user={item.user} url = {item.url}/>)}
 
             <div class="setinha">
               <ion-icon name="chevron-forward-circle"></ion-icon>
@@ -81,77 +30,7 @@ export default function Corpo(){
           </div>
 
           <div class="posts">
-            <div class="post">
-              <div class="topo">
-                <div class="usuario">
-                  <img src="assets/img/meowed.svg" />
-                  meowed
-                </div>
-                <div class="acoes">
-                  <ion-icon name="ellipsis-horizontal"></ion-icon>
-                </div>
-              </div>
-
-              <div class="conteudo">
-                <img src="assets/img/gato-telefone.svg" />
-              </div>
-
-              <div class="fundo">
-                <div class="acoes">
-                  <div>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="chatbubble-outline"></ion-icon>
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                  </div>
-                  <div>
-                    <ion-icon name="bookmark-outline"></ion-icon>
-                  </div>
-                </div>
-
-                <div class="curtidas">
-                  <img src="assets/img/respondeai.svg" />
-                  <div class="texto">
-                    Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="post">
-              <div class="topo">
-                <div class="usuario">
-                  <img src="assets/img/barked.svg" />
-                  barked
-                </div>
-                <div class="acoes">
-                  <ion-icon name="ellipsis-horizontal"></ion-icon>
-                </div>
-              </div>
-
-              <div class="conteudo">
-                <img src="assets/img/dog.svg" />
-              </div>
-
-              <div class="fundo">
-                <div class="acoes">
-                  <div>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="chatbubble-outline"></ion-icon>
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                  </div>
-                  <div>
-                    <ion-icon name="bookmark-outline"></ion-icon>
-                  </div>
-                </div>
-
-                <div class="curtidas">
-                  <img src="assets/img/adorable_animals.svg" />
-                  <div class="texto">
-                    Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {post.map(item => <Post user={item.user} imgUser={item.imgUser} img={item.img} imgEmphasis={item.imgEmphasis} emphasis={item.emphasis} likes={item.likes}/>)}
           </div>
         </div>
 
