@@ -176,7 +176,7 @@
     margin-right: 10px;
   }
   
-  .post .usuario, .post .topo img, .post .fundo img, .post ion-icon, .post strong {
+  .post .usuario, .post .topo img, .post .fundo img, .post ion-icon, .post strong, .conteudo {
     cursor: pointer;
   }
   
@@ -310,9 +310,9 @@
     display: none !important;
   }
   
-.sumir{
-  display: none;
-}
+  .colorRed{
+    color: red;
+  }
 
   @media (max-width: 935px) {
     .sidebar {

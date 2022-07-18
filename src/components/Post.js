@@ -2,12 +2,22 @@ import React from "react";
 
 export default function Post(props){
 
-    const [textName, setTextName] = React.useState('heart-outline')
+    const [textName, setTextName] = React.useState('heart-outline');
+    const [corIonHeart, setCorIonHeart] = React.useState("my hydrated");
 
-    function teste(){
-      if(textName === 'heart') setTextName('heart-outline');
-      else setTextName('heart');
-      console.log('entrou');
+    function likePhoto(typeObject){
+      if(typeObject === 'photo'){
+        setTextName('heart');
+        setCorIonHeart('my hydrated colorRed');
+      }else if(typeObject === 'button'){
+        if(textName === 'heart') {
+          setTextName('heart-outline');
+          setCorIonHeart('my hydrated');
+        }else{
+          setTextName('heart');
+          setCorIonHeart('my hydrated colorRed');
+        }
+      }
     }
     return (
         <div class="post">
@@ -21,14 +31,14 @@ export default function Post(props){
           </div>
         </div>
 
-        <div class="conteudo">
+        <div class="conteudo" onClick={() => likePhoto('photo')}>
           <img src={props.img} />
         </div>
-
+      
         <div class="fundo">
           <div class="acoes">
             <div>
-              <ion-icon onClick={teste} name={textName}></ion-icon>
+              <ion-icon onClick={() => likePhoto('button')} class={corIonHeart} name={textName}></ion-icon>
               <ion-icon name="chatbubble-outline"></ion-icon>
               <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
