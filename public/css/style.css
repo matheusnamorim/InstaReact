@@ -310,6 +310,10 @@
     display: none !important;
   }
   
+.sumir{
+  display: none;
+}
+
   @media (max-width: 935px) {
     .sidebar {
       display: none;

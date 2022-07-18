@@ -25,7 +25,7 @@ const sugestions = [
   {user: 'smallcutecats', img: 'assets/img/smallcutecats.svg', text: 'Segue você'}
 ];
 
-export default function Corpo(){
+export default function Corpo(props){
     return (
         <div class="corpo">
         <div class="esquerda">
@@ -47,8 +47,8 @@ export default function Corpo(){
           <div class="usuario">
             <img src="assets/img/catanacomics.svg" />
             <div class="texto">
-              <strong>catanacomics</strong>
-              Catana
+              <strong>{props.user}</strong>
+              {props.subUser}
             </div>
           </div>
 

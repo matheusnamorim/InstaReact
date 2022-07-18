@@ -6,7 +6,7 @@ export default function App(){
     return(
     <div>
         <NavBar />
-        <Corpo />
+        <Corpo user='catanacomics' subUser='Catana'/>
         <FundoMobile />
     </div>
     );

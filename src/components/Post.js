@@ -1,5 +1,14 @@
+import React from "react";
 
 export default function Post(props){
+
+    const [textName, setTextName] = React.useState('heart-outline')
+
+    function teste(){
+      if(textName === 'heart') setTextName('heart-outline');
+      else setTextName('heart');
+      console.log('entrou');
+    }
     return (
         <div class="post">
         <div class="topo">
@@ -19,7 +28,7 @@ export default function Post(props){
         <div class="fundo">
           <div class="acoes">
             <div>
-              <ion-icon name="heart-outline"></ion-icon>
+              <ion-icon onClick={teste} name={textName}></ion-icon>
               <ion-icon name="chatbubble-outline"></ion-icon>
               <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
